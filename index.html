@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <title>Glassmorphism Login Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <p>Age Calculator</p>
+      <input type="text" id="yob" placeholder="Year of birth"><br>
+      <input type="text" id="yoc" placeholder="Calculate age for year"><br>
+      <input type="button" value="Calculate" onclick="calculate()"><br>
+      <p id="result"></p>
+    </form>
+  </div>
+</body>
+<script>
+  function calculate() {
+    let yob = parseInt(document.getElementById("yob").value);
+    let yoc = parseInt(document.getElementById("yoc").value);
+    let age = yoc - yob
+    if (isNaN(yob) || isNaN(yoc)) {
+      document.getElementById("result").innerHTML = `Enter correct numbers`
+    }
+    else {
+      document.getElementById("result").innerHTML = `Your age in ${yoc} will be ${age}`
+    }
+  }
+</script>
+
+</html>
